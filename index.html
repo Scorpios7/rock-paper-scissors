@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="title">Rock Paper Scissors</div>
+    <div class="move-box">
+      <button class="move-button" onclick="moveRock()">
+        <img src="rock-emoji.png" alt="" class="move-img" />
+      </button>
+      <button class="move-button" onclick="movePaper()">
+        <img src="paper-emoji.png" alt="" class="move-img" />
+      </button>
+      <button class="move-button" onclick="moveScissors()">
+        <img src="scissors-emoji.png" alt="" class="move-img" />
+      </button>
+    </div>
+    <div class="result">Tie.</div>
+    <div class="move">
+      <div>
+        You
+        <img src="rock-emoji.png" alt="" class="move-img" id="my-result" />
+      </div>
+      <div>
+        <img
+          src="scissors-emoji.png"
+          alt=""
+          class="move-img"
+          id="computer-result"
+        />
+        Computer
+      </div>
+    </div>
+    <div class="total">
+      Wins:
+      <span id="win-count">0</span>
+      , Losses:
+      <span id="loss-count">0</span>, Ties:
+      <span id="tie-count">0</span>
+    </div>
+    <button class="reset" onclick="reset()">Reset Score</button>
+  </body>
+</html>
