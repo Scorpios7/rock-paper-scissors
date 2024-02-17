@@ -46,7 +46,7 @@ body {
     margin-bottom: 10px;
 }
 
-.reset {
+.reset, .auto-play {
     padding: 8px 15px;
     font-size: 15px;
     color: #000;

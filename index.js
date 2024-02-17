@@ -2,6 +2,8 @@ const mapResult = ['rock', 'paper', 'scissors'];
 let myResult;
 let computerResult;
 let win = 0, loss = 0, tie = 0;
+let IsAutoPlay = false;
+let intervalId;
 
 function moveRock() {
     myResult = 0;
@@ -59,4 +61,21 @@ function reset() {
     document.getElementById('loss-count').innerHTML = loss;
     document.getElementById('win-count').innerHTML = win;
     document.getElementById('tie-count').innerHTML = tie;
+}
+
+function autoPlay() {
+    const autoPlayObj = document.querySelector('.auto-play');
+    if (!IsAutoPlay) {
+        IsAutoPlay = true;
+        autoPlayObj.innerHTML = 'Stop Auto Play';
+        intervalId = setInterval(function() {
+            myResult = Math.floor(Math.random() * 3);
+            computerResult = Math.floor(Math.random() * 3);
+            judge();
+        }, 2000);
+    } else {
+        IsAutoPlay = false;
+        autoPlayObj.innerHTML = 'Auto Play';
+        clearInterval(intervalId);
+    }
 }
